@@ -1,13 +1,11 @@
-const { createClient } = window.supabase;
-
-const supabaseClient = createClient(
+const supabaseClient = window.supabase.createClient(
   "https://gcodvildgtyglhgslqnz.supabase.co",
   "sb_publishable_TAAcWZTVtQMrFXGIDPB3qw_0EeDl4M-"
 );
 
 let currentUser = "";
 
-// ================= REGISTER =================
+// REGISTER
 async function register() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
@@ -24,7 +22,7 @@ async function register() {
   alert("Register berhasil!");
 }
 
-// ================= LOGIN =================
+// LOGIN
 async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
